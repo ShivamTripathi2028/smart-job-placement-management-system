@@ -74,18 +74,77 @@ Security Note: Never commit database passwords, API keys, or other secrets to Gi
 
 The application uses port "8080" by default.
 
-## API Modules
+## API Modules 
 
-The application provides REST API modules for:
+API Endpoints
+Base URL: http://localhost:8080
+  
+ 1. Student Management
 
-- Students
-- Companies
-- Jobs
-- Job Applications
-- Placements
-- Dashboard Statistics
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| POST | /students | Create a student |
+| GET | /students | Get all students |
+| GET | /students/{id} | Get a student by ID |
+| PUT | /students/{id} | Update a student |
+| DELETE | /students/{id} | Delete a student |
 
-Use Postman to test the endpoints supported by the application.
+2. Company Management
+
+| Method |  Endpoint |  Description  |
+| --- | --- | --- |
+| POST |	/companies | Create a company |
+| GET |	/companies | Get all companies |
+| GET |	/companies/{id} | Get a company by ID |
+| PUT |	/companies/{id} | Update a company |
+| DELETE |	/companies/{id}	| Delete a company |
+
+3. Job Management
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| POST |	/jobs | Create a job |
+| GET |	/jobs | Get all jobs |
+| GET |	/jobs/{id}	| Get a job by ID | 
+| PUT |	/jobs/{id}	| Update a job |
+| DELETE |	/jobs/{id}	| Delete a job |
+
+4. Job Application Management
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| POST |	/applications	| Submit a job application |
+| GET |	/applications	| Get all applications |
+| GET |	/applications/{id}	| Get an application by ID |
+| PUT |	/applications/{id}	| Update an application |
+| DELETE |	/applications/{id}	| Delete an application |
+
+5. Placement Management
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| POST |	/api/placements	| Create a placement |
+| GET | /api/placements	| Get all placements |
+| GET |	/api/placements/{id}	| Get a placement by ID |
+| PUT |	/api/placements/{id}	| Update a placement |
+| DELETE |	/api/placements/{id}	| Delete a placement |
+
+6. Dashboard
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET | /dashboard/summary	| Get overall dashboard summary |
+| GET |	/dashboard/placement-statistics	| Get placement statistics |
+| GET |	/dashboard/application-statistics	| Get application statistics |
+
+7. Home
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| GET |	/	| Access the home endpoint |
+
+Testing
+Use Postman to test the endpoints. For POST and PUT requests, select Body → raw → JSON when the endpoint expects a JSON request body.
 
 ## Future Enhancements
 
