@@ -1235,3 +1235,26 @@ tbody tr:hover {
   background: #e1f8ec;
   color: #15945b;
 }
+/* Mobile responsive fix for Recent Job Opportunities */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .jobs-panel {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .jobs-panel .panel-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .jobs-panel h2,
+  .jobs-panel p {
+    overflow-wrap: anywhere;
+  }
+}
