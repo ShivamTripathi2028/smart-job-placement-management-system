@@ -1,165 +1,177 @@
 # Smart Job and Placement Management System
 
-A backend-based Job and Placement Management System developed using Java, Spring Boot, Spring Data JPA, and MySQL.
+A full-stack web application designed to manage students, companies, job opportunities, job applications, and placement records through a centralized dashboard.
 
-This project provides RESTful APIs to manage students, companies, job opportunities, job applications, placements, and placement dashboard statistics.
+Built using React, Java, Spring Boot, Spring Data JPA, and MySQL, the system provides RESTful APIs and a web-based interface for placement management.
 
-## Features
+## Key Features
 
-- Student Management
-- Company Management
-- Job Management
-- Job Application Management
-- Placement Management
-- Input Validation
-- Global Exception Handling
-- Dashboard Summary
-- Application Statistics
-- Placement Statistics
-- RESTful API Architecture
-- MySQL Database Integration
+- Interactive dashboard with live statistics
+- Student record management
+- Company information management
+- Job opportunity management
+- Job application tracking
+- Placement record management
+- RESTful API integration
+- MySQL database integration
+- Input validation and exception handling
+- Responsive web interface
 
-## Technologies Used
+## Technology Stack
 
+*Frontend*
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+
+*Backend*
 - Java
 - Spring Boot
-- Spring Web
 - Spring Data JPA
+- Spring Web
 - Jakarta Bean Validation
-- MySQL
 - Maven
-- Postman
+
+*Database*
+- MySQL
+
+*Tools*
 - Visual Studio Code
+- Postman
 - Git and GitHub
 
 ## Project Structure
 
-src/main/java/com/shivam/smartjobplacementmanagementsystem
-├── controller
-├── entity
-├── exception
-├── repository
-└── service
+text
+smart-job-placement-management-system/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/shivam/smartjobplacementmanagementsystem/
+│               ├── config/
+│               ├── controller/
+│               ├── entity/
+│               ├── exception/
+│               ├── repository/
+│               └── service/
+└── pom.xml
 
-## Prerequisites
 
-Before running the project, ensure that the following tools are installed:
+## REST API Endpoints
 
-- Java Development Kit (JDK)
+| Module | Endpoint | Operations |
+|---|---|---|
+| Students | /students | GET, POST |
+| Companies | /companies | GET, POST |
+| Jobs | /jobs | GET, POST |
+| Applications | /applications | GET, POST |
+| Placements | /api/placements | GET, POST, PUT, DELETE |
+
+Available operations depend on the implemented controller methods.
+
+## Getting Started
+
+### Prerequisites
+
+- Java Development Kit
+- Node.js and npm
 - MySQL Server
+- Maven
 - Git
-- A terminal or command-line application
 
-## Database Configuration
+### 1. Clone the Repository
 
-1. Start your MySQL server.
-2. Create a database named "smart_job_placement".
-3. Configure the database connection in "src/main/resources/application.properties".
-4. Set the "DB_PASSWORD" environment variable to your local MySQL password.
+bash
+git clone https://github.com/ShivamTripathi2028/smart-job-placement-management-system.git
+cd smart-job-placement-management-system
 
-The application uses an environment variable for the database password instead of storing the password directly in the source code.
 
-Security Note: Never commit database passwords, API keys, or other secrets to GitHub.
+### 2. Configure the Database
 
-## How to Run the Project
+Create a MySQL database:
 
-1. Clone or download this repository.
-2. Open the project directory in a terminal.
-3. Configure the MySQL database and the "DB_PASSWORD" environment variable.
-4. Run the following command:
+sql
+CREATE DATABASE smart_job_placement;
 
+
+Configure your database connection in the Spring Boot application settings.
+
+Use environment variables or a local configuration file for database credentials. Do not commit passwords or other secrets to GitHub.
+
+### 3. Start the Backend
+
+From the project root directory, run:
+
+bash
 ./mvnw spring-boot:run
 
-5. Once the application starts successfully, test the REST APIs using Postman.
 
-The application uses port "8080" by default.
+The backend is configured to run on:
 
-## API Modules 
+text
+http://localhost:8080
 
-API Endpoints
-Base URL: http://localhost:8080
-  
- 1. Student Management
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST | /students | Create a student |
-| GET | /students | Get all students |
-| GET | /students/{id} | Get a student by ID |
-| PUT | /students/{id} | Update a student |
-| DELETE | /students/{id} | Delete a student |
+### 4. Start the Frontend
 
-2. Company Management
+Open another terminal and run:
 
-| Method |  Endpoint |  Description  |
-| --- | --- | --- |
-| POST |	/companies | Create a company |
-| GET |	/companies | Get all companies |
-| GET |	/companies/{id} | Get a company by ID |
-| PUT |	/companies/{id} | Update a company |
-| DELETE |	/companies/{id}	| Delete a company |
+bash
+cd frontend
+npm install
+npm run dev
 
-3. Job Management
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST |	/jobs | Create a job |
-| GET |	/jobs | Get all jobs |
-| GET |	/jobs/{id}	| Get a job by ID | 
-| PUT |	/jobs/{id}	| Update a job |
-| DELETE |	/jobs/{id}	| Delete a job |
+Open the local development address displayed by Vite in your terminal. The current setup uses:
 
-4. Job Application Management
+text
+http://localhost:5175
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST |	/applications	| Submit a job application |
-| GET |	/applications	| Get all applications |
-| GET |	/applications/{id}	| Get an application by ID |
-| PUT |	/applications/{id}	| Update an application |
-| DELETE |	/applications/{id}	| Delete an application |
 
-5. Placement Management
+### 5. Test the Application
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| POST |	/api/placements	| Create a placement |
-| GET | /api/placements	| Get all placements |
-| GET |	/api/placements/{id}	| Get a placement by ID |
-| PUT |	/api/placements/{id}	| Update a placement |
-| DELETE |	/api/placements/{id}	| Delete a placement |
+Open the frontend in your browser and explore the dashboard and management sections.
 
-6. Dashboard
+REST APIs can also be tested using Postman.
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET | /dashboard/summary	| Get overall dashboard summary |
-| GET |	/dashboard/placement-statistics	| Get placement statistics |
-| GET |	/dashboard/application-statistics	| Get application statistics |
+## Learning Outcomes
 
-7. Home
+This project demonstrates practical experience with:
 
-| Method | Endpoint | Description |
-| --- | --- | --- |
-| GET |	/	| Access the home endpoint |
-
-Testing
-Use Postman to test the endpoints. For POST and PUT requests, select Body → raw → JSON when the endpoint expects a JSON request body.
+- Full-stack application development
+- REST API development and integration
+- Java and Spring Boot
+- Database connectivity using MySQL
+- React component-based UI development
+- Git and GitHub version control
 
 ## Future Enhancements
 
-- User authentication and authorization
-- Role-based access for students, recruiters, and administrators
-- Improved dashboard and reporting features
-- API documentation using Swagger/OpenAPI
-- Frontend integration
+- Add, edit, and delete forms across management modules
+- Search, filtering, and pagination
+- User authentication and role-based access control
+- Dashboard charts and reports
+- Automated testing
 
 ## Author
 
-Shivam Tripathi
+*Shivam Tripathi*
 
 B.Tech Computer Science and Engineering Student
 
-## Project Purpose
+GitHub: [ShivamTripathi2028](https://github.com/ShivamTripathi2028)
 
-This project demonstrates practical application development using Java, Spring Boot, REST APIs, Spring Data JPA, and MySQL.
+---
+
+If you find this project useful, consider giving the repository a star.
