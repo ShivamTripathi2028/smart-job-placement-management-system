@@ -2,11 +2,17 @@
 
 A full-stack web application designed to manage students, companies, job opportunities, job applications, and placement records through a centralized dashboard.
 
-Built using React, Java, Spring Boot, Spring Data JPA, and MySQL, the system provides RESTful APIs and a web-based interface for placement management.
+Built using React, Java, Spring Boot, Spring Data JPA, and MySQL, this project provides RESTful APIs and a web-based interface for placement management.
+
+## Live Demo
+
+- Live Website: https://smart-job-placement-management-syst.vercel.app/
+- Backend API: https://smart-job-placement-management-system.onrender.com
+- GitHub Repository: https://github.com/ShivamTripathi2028/smart-job-placement-management-system
 
 ## Key Features
 
-- Interactive dashboard with live statistics
+- Interactive dashboard with statistics
 - Student record management
 - Company information management
 - Job opportunity management
@@ -19,14 +25,16 @@ Built using React, Java, Spring Boot, Spring Data JPA, and MySQL, the system pro
 
 ## Technology Stack
 
-*Frontend*
+### Frontend
+
 - React
 - Vite
 - JavaScript
 - HTML5
 - CSS3
 
-*Backend*
+### Backend
+
 - Java
 - Spring Boot
 - Spring Data JPA
@@ -34,17 +42,20 @@ Built using React, Java, Spring Boot, Spring Data JPA, and MySQL, the system pro
 - Jakarta Bean Validation
 - Maven
 
-*Database*
-- MySQL
+### Database
 
-*Tools*
+- MySQL hosted on Aiven
+
+## Tools and Deployment
+
 - Visual Studio Code
 - Postman
 - Git and GitHub
+- Vercel
+- Render
 
 ## Project Structure
 
-text
 smart-job-placement-management-system/
 ├── frontend/
 │   ├── public/
@@ -67,83 +78,76 @@ smart-job-placement-management-system/
 │               └── service/
 └── pom.xml
 
-
 ## REST API Endpoints
 
-| Module | Endpoint | Operations |
-|---|---|---|
-| Students | /students | GET, POST |
-| Companies | /companies | GET, POST |
-| Jobs | /jobs | GET, POST |
-| Applications | /applications | GET, POST |
-| Placements | /api/placements | GET, POST, PUT, DELETE |
-
-Available operations depend on the implemented controller methods.
+Module| Endpoint| Supported Operations
+Students| "/students"| GET, POST
+Companies| "/companies"| GET, POST
+Jobs| "/jobs"| GET, POST
+Applications| "/applications"| GET, POST
+Placements| "/api/placements"| GET, POST, PUT, DELETE
+Dashboard Summary| "/dashboard/summary"| GET
+Application Statistics| "/dashboard/application-statistics"| GET
+Placement Statistics| "/dashboard/placement-statistics"| GET
 
 ## Getting Started
 
-### Prerequisites
+Prerequisites
 
-- Java Development Kit
+- Java Development Kit (JDK)
 - Node.js and npm
 - MySQL Server
 - Maven
 - Git
 
-### 1. Clone the Repository
+1. Clone the Repository
 
-bash
 git clone https://github.com/ShivamTripathi2028/smart-job-placement-management-system.git
 cd smart-job-placement-management-system
 
+2. Configure the Database
 
-### 2. Configure the Database
+Create the database in MySQL:
 
-Create a MySQL database:
-
-sql
 CREATE DATABASE smart_job_placement;
 
+Configure the database connection using your local application settings or environment variables.
 
-Configure your database connection in the Spring Boot application settings.
+Important: Never commit database passwords, API keys, or other sensitive credentials to GitHub.
 
-Use environment variables or a local configuration file for database credentials. Do not commit passwords or other secrets to GitHub.
-
-### 3. Start the Backend
+3. Start the Backend
 
 From the project root directory, run:
 
-bash
 ./mvnw spring-boot:run
 
+The backend runs on:
 
-The backend is configured to run on:
-
-text
 http://localhost:8080
 
-
-### 4. Start the Frontend
+4. Start the Frontend
 
 Open another terminal and run:
 
-bash
 cd frontend
 npm install
 npm run dev
 
+Open the local development URL displayed in your terminal. The current development setup uses:
 
-Open the local development address displayed by Vite in your terminal. The current setup uses:
-
-text
 http://localhost:5175
 
+5. Test the Application
 
-### 5. Test the Application
+- Open the frontend in your browser.
+- Explore the dashboard and management sections.
+- Test the REST APIs using Postman.
 
-Open the frontend in your browser and explore the dashboard and management sections.
+## Deployment
 
-REST APIs can also be tested using Postman.
+- Frontend: Vercel
+- Backend: Render
+- Database: MySQL hosted on Aiven
 
 ## Learning Outcomes
 
@@ -154,11 +158,13 @@ This project demonstrates practical experience with:
 - Java and Spring Boot
 - Database connectivity using MySQL
 - React component-based UI development
+- Backend exception handling and validation
 - Git and GitHub version control
+- Cloud deployment and frontend-backend integration
 
 ## Future Enhancements
 
-- Add, edit, and delete forms across management modules
+- Add, edit, and delete functionality across management modules
 - Search, filtering, and pagination
 - User authentication and role-based access control
 - Dashboard charts and reports
@@ -166,11 +172,11 @@ This project demonstrates practical experience with:
 
 ## Author
 
-*Shivam Tripathi*
+Shivam Tripathi
 
 B.Tech Computer Science and Engineering Student
 
-GitHub: [ShivamTripathi2028](https://github.com/ShivamTripathi2028)
+GitHub: https://github.com/ShivamTripathi2028
 
 ---
 
