@@ -52,7 +52,7 @@ function App() {
   const [applications, setApplications] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/students")
+    fetch("https://smart-job-placement-management-system.onrender.com/students")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load students");
@@ -62,7 +62,7 @@ function App() {
       .then((data) => setStudents(data))
       .catch((error) => console.error("Students API:", error));
 
-    fetch("http://localhost:8080/companies")
+    fetch("https://smart-job-placement-management-system.onrender.com/companies")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load companies");
@@ -72,7 +72,7 @@ function App() {
       .then((data) => setCompanies(data))
       .catch((error) => console.error("Companies API:", error));
 
-    fetch("http://localhost:8080/jobs")
+    fetch("https://smart-job-placement-management-system.onrender.com/jobs")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load jobs");
@@ -82,7 +82,7 @@ function App() {
       .then((data) => setJobs(data))
       .catch((error) => console.error("Jobs API:", error));
 
-    fetch("http://localhost:8080/applications")
+    fetch("https://smart-job-placement-management-system.onrender.com/applications")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load applications");
@@ -92,7 +92,7 @@ function App() {
       .then((data) => setApplications(data))
       .catch((error) => console.error("Applications API:", error));
 
-    fetch("http://localhost:8080/api/placements")
+    fetch("https://smart-job-placement-management-system.onrender.com/api/placements")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load placements");
