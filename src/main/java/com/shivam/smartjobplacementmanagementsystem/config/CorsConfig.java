@@ -1,11 +1,6 @@
 package com.shivam.smartjobplacementmanagementsystem.config;
-    
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-@Configuration
-public class CorsConfig {
+import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import org.springframework.web.servlet.config.annotation.CorsRegistry; import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+@Configuration public class CorsConfig {
 @Bean
 public WebMvcConfigurer corsConfigurer() {
     return new WebMvcConfigurer() {
@@ -18,10 +13,9 @@ public WebMvcConfigurer corsConfigurer() {
                             "https://smart-job-placement-management-syst.vercel.app"
                     )
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                    .allowedHeaders("*");
+                    .allowedHeaders("*")
+                    .allowCredentials(false);
         }
     };
 }
-
 }
-
