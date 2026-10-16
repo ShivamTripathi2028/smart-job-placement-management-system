@@ -10,6 +10,12 @@ Built using React, Java, Spring Boot, Spring Data JPA, and MySQL, this project p
 - Backend API: https://smart-job-placement-management-system.onrender.com
 - GitHub Repository: https://github.com/ShivamTripathi2028/smart-job-placement-management-system
 
+## Dashboard Preview
+
+"Smart Job Placement Management System Dashboard" (screenshots/dashboard.png)
+
+The dashboard provides a centralized overview of students, companies, job opportunities, applications, and placement statistics.
+
 ## Key Features
 
 - Interactive dashboard with statistics
